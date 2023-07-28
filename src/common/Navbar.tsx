@@ -18,7 +18,8 @@ const navItems = [
 ]
 export default function Navbar() {
   return <nav className="flex p-page justify-between py-6">
-    <div>
+    <div className="flex gap-x-4 items-center">
+      <img src="/images/logo.png" alt="logo" className="w-[6%]"/>
       <Link to="/" className="text-primary font-extrabold text-4xl">MarsDiet</Link>
     </div>
     <div className="flex gap-x-12 items-center">
