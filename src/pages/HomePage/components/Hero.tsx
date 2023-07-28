@@ -11,7 +11,7 @@ const typingText = [
 export default function Hero() {
   return (
     <section className="flex p-page">
-      <div className="basis-1/2 justify-center flex flex-col gap-y-10">
+      <div className="basis-1/2 justify-center flex flex-col gap-y-6">
         <div className="text-front text-6xl font-extrabold tracking-wide gap-y-2 flex flex-col">
           Healthy <br />{" "}
           <div>
@@ -20,7 +20,7 @@ export default function Hero() {
           </div>
           a healthy life
         </div>
-        <div>
+        <div className="text-lg text-[#000000ae]">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores
           eius, impedit aliquid amet atque assumenda minus dignissimos omnis sit
           voluptatibus vero! Modi qui dolore quisquam! Lorem ipsum dolor sit
@@ -37,9 +37,10 @@ export default function Hero() {
           </button>
         </div>
       </div>
-      <div className="basis-1/2 flex justify-center items-center relative">
-        <img src="/images/hero/mascot.png" alt="mascot" className="w-[80%]" />
-        <div className="absolute bottom-0 bg-white w-full items-center flex py-3 shadow-[rgba(0,_0,_0,_0.68)_0px_12px_25px] px-8 rounded-[2rem] text-2xl justify-between">
+      <div className="basis-1/2 flex justify-center items-center relative z-1">
+        <div className="absolute h-[90%] bg-gradient-to-tl from-primary to-secondary rounded-full w-[75%] top-12" />
+        <img src="/images/hero/mascot.png" alt="mascot" className="w-[85%] z-1" />
+        <div className="absolute bottom-0 bg-white w-full items-center z-10 flex py-3 shadow-[rgba(0,_0,_0,_0.68)_0px_12px_25px] px-8 rounded-[2rem] text-2xl justify-between">
           <ReactTyped
             strings={typingText}
             typeSpeed={70}
@@ -48,7 +49,7 @@ export default function Hero() {
             cursorChar="|"
             showCursor={true}
           />
-          <MaterialIcon codepoint="e8b6" className="text-primary text-4xl"/>
+          <MaterialIcon codepoint="e8b6" className="text-primary text-4xl" />
         </div>
       </div>
     </section>
