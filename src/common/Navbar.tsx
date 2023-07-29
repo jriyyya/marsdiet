@@ -54,10 +54,10 @@ export default function Navbar() {
         ))}
         {!isAuthenticated && (
           <button
-            className="px-8 py-2 text-back font-medium rounded-3xl bg-gradient-to-tl from-primary to-secondary"
+            className="px-8 py-3 text-back font-medium rounded-3xl bg-gradient-to-tl from-primary to-secondary whitespace-nowrap"
             onClick={() => loginWithRedirect()}
           >
-            Login
+            Get Started
           </button>
         )}
         {isAuthenticated && (
