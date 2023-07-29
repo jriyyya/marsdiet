@@ -11,7 +11,7 @@ export default function WaterTracker() {
       {
         label: "Glasses",
         data: [glassesDrank, glassesCount - glassesDrank],
-        backgroundColor: ["rgb(54, 162, 235)", "rgb(255, 99, 132)"],
+        backgroundColor: ["rgb(101, 189, 255)", "rgb(255, 101, 101)"],
         hoverOffset: 4,
       },
     ],
