@@ -28,7 +28,6 @@ export default function App() {
           element={<ProtectedRoute type={ProtectedTypes.PUBLICONLY} />}
         >
           <Route index element={<HomePage />} />
-          <Route path="/auth" element={<AuthPage />} />
         </Route>
 
         {/* Private Only Routes -> Non Authenticated users can not visit */}

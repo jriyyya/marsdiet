@@ -16,7 +16,7 @@ export default function ProtectedRoute(props: ProtectedRouteProps) {
   const auth = isAuthenticated;
 
   if (props.type === ProtectedTypes.PRIVATEONLY) {
-    return auth ? <Outlet /> : <Navigate to="/auth" />;
+    return auth ? <Outlet /> : <Navigate to="/" />;
   }
 
   if (props.type === ProtectedTypes.PUBLICONLY) {
