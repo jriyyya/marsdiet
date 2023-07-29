@@ -25,6 +25,9 @@ export default {
       zIndex: {
         1: 1,
       },
+      transitionDuration: {
+        inherit: "inherit",
+      },
     },
   },
   plugins: [],
