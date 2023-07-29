@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
 import useNavbarConfig from "../hooks/useNavbarConfig";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const navItems = [
   {
@@ -17,8 +18,10 @@ const navItems = [
     to: "/help",
   },
 ];
+
 export default function Navbar() {
   const config = useNavbarConfig().value;
+  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
   return (
     <nav
       className={twMerge(
@@ -49,12 +52,22 @@ export default function Navbar() {
             {item.title}
           </NavLink>
         ))}
-        <Link
-          to="/auth"
-          className="px-8 py-2 text-back font-medium rounded-3xl bg-gradient-to-tl from-primary to-secondary"
-        >
-          Login
-        </Link>
+        {!isAuthenticated && (
+          <button
+            className="px-8 py-2 text-back font-medium rounded-3xl bg-gradient-to-tl from-primary to-secondary"
+            onClick={() => loginWithRedirect()}
+          >
+            Login
+          </button>
+        )}
+        {isAuthenticated && (
+          <button
+            className="px-8 py-2 text-back font-medium rounded-3xl bg-gradient-to-tl from-primary to-secondary"
+            onClick={() => logout()}
+          >
+            Logout
+          </button>
+        )}
       </div>
     </nav>
   );
