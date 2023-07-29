@@ -9,6 +9,7 @@ import Footer from "./common/Footer";
 import Navbar from "./common/Navbar";
 import HomePage from "./pages/HomePage/HomePage";
 import { GlobalContextProvider } from "./contexts/globalContext";
+import AuthPage from "./pages/HomePage/AuthPage/AuthPage";
 
 export default function App() {
   const router = createBrowserRouter(
@@ -16,6 +17,7 @@ export default function App() {
       <Route path="/" element={<Root />}>
         <Route index element={<HomePage />} />
         <Route path="/0" element={<div />} />
+        <Route path="/auth" element={<AuthPage />} />
       </Route>
     )
   );
