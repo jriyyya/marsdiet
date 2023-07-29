@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import MaterialIcon from "../../../common/MaterialIcon";
-import useNavbarConfig from "../../../hooks/useNavbarConfig";
-import AuthInput from "./components/AuthInput";
+import MaterialIcon from "../../common/MaterialIcon";
+import useNavbarConfig from "../../hooks/useNavbarConfig";
 import { Link, useNavigate } from "react-router-dom";
 import AuthForm from "./components/AuthForm";
 

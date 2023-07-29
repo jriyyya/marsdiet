@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MaterialIcon from "../../../../common/MaterialIcon";
+import MaterialIcon from "../../../common/MaterialIcon";
 
 interface AuthInputProps {
   placeholder: string;

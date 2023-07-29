@@ -30,14 +30,14 @@ export default function Hero() {
             soluta! Adipisci, alias esse!
           </div>
         </div>
-        <div className="flex gap-x-4">
+        {/* <div className="flex gap-x-4">
           <button className="px-10 py-2 text-back font-medium rounded-3xl text-[1.5rem] bg-gradient-to-tl from-primary to-secondary">
             Login
           </button>
           <button className="px-8 py-2 text-back font-medium rounded-3xl text-[1.5rem] bg-gradient-to-tl from-primary to-secondary">
             Signup
           </button>
-        </div>
+        </div> */}
       </div>
       <div className="basis-1/2 flex justify-center items-center relative z-1">
         <div className="absolute h-[100%] bg-gradient-to-tl from-primary to-secondary rounded-full w-[90%] top-0" />
