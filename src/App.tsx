@@ -10,10 +10,10 @@ import Footer from "./common/Footer";
 import Navbar from "./common/Navbar";
 import HomePage from "./pages/HomePage/HomePage";
 import { GlobalContextProvider } from "./contexts/globalContext";
-import AuthPage from "./pages/HomePage/AuthPage/AuthPage";
+import AuthPage from "./pages/AuthPage/AuthPage";
 import { Auth0Provider } from "@auth0/auth0-react";
 import ProtectedRoute, { ProtectedTypes } from "./common/ProtectedRoute";
-import DashboardPage from "./pages/HomePage/DashboardPage/DashboardPage";
+import DashboardPage from "./pages/DashboardPage/DashboardPage";
 
 const AUTH0_DOMAIN = import.meta.env.VITE_AUTH0_DOMAIN;
 const AUTH0_CLIENTID = import.meta.env.VITE_AUTH0_CLIENTID;
