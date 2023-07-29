@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
+import useNavbarConfig from "../hooks/useNavbarConfig";
 
 const navItems = [
   {
@@ -17,8 +18,14 @@ const navItems = [
   },
 ];
 export default function Navbar() {
+  const config = useNavbarConfig().value;
   return (
-    <nav className="flex p-page justify-between py-6">
+    <nav
+      className={twMerge(
+        "flex p-page justify-between py-6",
+        config.hidden && "hidden"
+      )}
+    >
       <div className="flex gap-x-4 items-center">
         <img src="/images/logo.png" alt="logo" className="w-[6%]" />
         <Link to="/" className="text-primary font-extrabold text-4xl">
