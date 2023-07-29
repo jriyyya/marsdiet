@@ -3,3 +3,27 @@
   inherits: false;
   initial-value: #c0ffee;
 }
+
+@keyframes animate-waves {
+  0% {
+    transform: translateX(-50vw);
+  }
+  50% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(-50vw);
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(100vw);
+  }
+  50% {
+    transform: translateX(50vw);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
