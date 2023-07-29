@@ -13,7 +13,16 @@ export default function SideNav(props: SideNavProps) {
   const [user, setUser] = useState(dummyUser);
 
   return (
-    <div className={twMerge("h-[90vh] p-6", props.className)}>
+    <div
+      className={twMerge(
+        "h-[90vh] p-6 border-t-2 border-b-2 border-r-2 border-l-transparent mt-6 border-primary rounded-r-xl",
+        props.className
+      )}
+    >
+      <div className="flex  items-center pb-12 pt-6 gap-x-2">
+        <img src="/images/logo.png" className="w-[25%]" />
+        <h2 className="text-3xl font-semibold text-primary">MarsDiet</h2>
+      </div>
       <div className="flex flex-col gap-y-10">
         <div className="flex flex-col gap-y-3 items-center">
           <img
