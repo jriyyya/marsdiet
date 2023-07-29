@@ -12,6 +12,8 @@ import HomePage from "./pages/HomePage/HomePage";
 import { GlobalContextProvider } from "./contexts/globalContext";
 import AuthPage from "./pages/HomePage/AuthPage/AuthPage";
 import { Auth0Provider } from "@auth0/auth0-react";
+import ProtectedRoute, { ProtectedTypes } from "./common/ProtectedRoute";
+import DashboardPage from "./pages/HomePage/DashboardPage/DashboardPage";
 
 const AUTH0_DOMAIN = import.meta.env.VITE_AUTH0_DOMAIN;
 const AUTH0_CLIENTID = import.meta.env.VITE_AUTH0_CLIENTID;
@@ -20,10 +22,22 @@ export default function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
-        <Route index element={<HomePage />} />
-        <Route path="/0" element={<div />} />
-        <Route path="/auth" element={<AuthPage />} />
-        <Route path="/dashboard" element={<AuthPage />} />
+        {/* Public Only Routes -> Authenticated users can not visit */}
+        <Route
+          path="/"
+          element={<ProtectedRoute type={ProtectedTypes.PUBLICONLY} />}
+        >
+          <Route index element={<HomePage />} />
+          <Route path="/auth" element={<AuthPage />} />
+        </Route>
+
+        {/* Private Only Routes -> Non Authenticated users can not visit */}
+        <Route
+          path="/"
+          element={<ProtectedRoute type={ProtectedTypes.PRIVATEONLY} />}
+        >
+          <Route path="/dashboard" element={<DashboardPage />} />
+        </Route>
       </Route>
     )
   );
@@ -44,7 +58,7 @@ export default function App() {
 
 function Root() {
   return (
-    <main className="relative">
+    <main className="relative min-h-screen flex flex-col">
       <Navbar />
       <Outlet />
       <Footer />

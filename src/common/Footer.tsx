@@ -1,21 +1,24 @@
 export default function Footer() {
   return (
-    <footer className="">
-      <div className="relative h-[8vh] overflow-x-hidden">
-        <Wave opacity={100} />
-        <Wave opacity={50} />
-        <Wave opacity={70} />
-        <Wave opacity={30} />
-      </div>
-      <div className="bg-primary text-back items-center flex flex-col gap-y-4 py-8 text-opacity-75">
-        <div className="flex gap-x-6 text-xl">
-          <div>Home</div>
-          <div>About</div>
-          <div>Contact Us</div>
+    <>
+      <div className="flex-1" />
+      <footer className="">
+        <div className="relative h-[7vh] overflow-x-hidden translate-y-1">
+          <Wave opacity={100} />
+          <Wave opacity={50} />
+          <Wave opacity={70} />
+          <Wave opacity={30} />
         </div>
-        <div>Made with 🤍 by Spandan Barve and Riya Jain</div>
-      </div>
-    </footer>
+        <div className="bg-primary text-back items-center flex flex-col gap-y-4 py-8 text-opacity-75">
+          <div className="flex gap-x-6 text-xl">
+            <div>Home</div>
+            <div>About</div>
+            <div>Contact Us</div>
+          </div>
+          <div>Made with 🤍 by Spandan Barve and Riya Jain</div>
+        </div>
+      </footer>
+    </>
   );
 }
 
