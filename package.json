@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "dev" : "cd client && start cmd /k yarn dev && cd ../server && yarn dev",
+        "first" : "cd client && yarn && cd ../server && yarn"
+    }
+}
