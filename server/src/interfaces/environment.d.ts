@@ -5,6 +5,7 @@ declare global {
       FRONTEND_URL: "http://127.0.01:5173";
       PORT?: number;
       MONGODB_URI?: string;
+      CALORIENINJAS_API_KEY?: string;
     }
   }
 }
