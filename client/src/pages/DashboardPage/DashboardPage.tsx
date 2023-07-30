@@ -24,6 +24,12 @@ export default function DashboardPage() {
       user?.picture ||
         "https://cdn.vectorstock.com/i/preview-1x/32/12/default-avatar-profile-icon-vector-39013212.jpg"
     );
+
+    api.user.registration
+      .status(user?.email || "asd@sdasd.cc")
+      .then((status) => {
+        console.log(status);
+      });
   }, []);
 
   return (
