@@ -13,6 +13,7 @@ export default function DashboardPage() {
       navbarConfig.show();
     };
   }, []);
+
   return (
     <article className="flex min-h-screen">
       <SideNav className="basis-[20%]" />

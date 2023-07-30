@@ -11,11 +11,12 @@ interface SideNavProps {
 export default function SideNav(props: SideNavProps) {
   //   const { user } = useAuth0() as User;
   const [user, setUser] = useState(dummyUser);
+  const { logout } = useAuth0();
 
   return (
     <div
       className={twMerge(
-        "h-[90vh] p-6 border-t-2 border-b-2 border-r-2 border-l-transparent mt-6 border-primary rounded-r-xl",
+        "h-full p-6 bg-primary bg-opacity-20 mt-3 rounded-r-3xl",
         props.className
       )}
     >
@@ -31,7 +32,12 @@ export default function SideNav(props: SideNavProps) {
             className="rounded-full"
           />
           <h2 className="text-sm truncate">{user.name}</h2>
-          <button className="bg-red-600 rounded-md px-5 py-1 text-white duration-300 hover:-translate-y-1 hover:shadow">
+          <button
+            className="bg-red-600 rounded-md px-5 py-1 text-white duration-300 hover:-translate-y-1 hover:shadow"
+            onClick={() => {
+              logout();
+            }}
+          >
             Logout
           </button>
         </div>

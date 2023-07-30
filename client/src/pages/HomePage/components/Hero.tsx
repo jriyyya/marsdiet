@@ -10,7 +10,7 @@ const typingText = [
 ];
 export default function Hero() {
   return (
-    <section className="flex p-page my-16">
+    <section className="flex p-page my-16 gap-x-4">
       <div className="basis-1/2 flex flex-col justify-between">
         <div className="flex flex-col gap-y-6">
           <div className="text-front text-6xl font-extrabold tracking-wide gap-y-2 flex flex-col">
@@ -22,12 +22,11 @@ export default function Hero() {
             a healthy life
           </div>
           <div className="text-lg text-[#000000ae]">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores
-            eius, impedit aliquid amet atque assumenda minus dignissimos omnis
-            sit voluptatibus vero! Modi qui dolore quisquam! Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Accusamus nisi, numquam ullam
-            cumque perferendis facere quasi nostrum molestias repellat totam non
-            soluta! Adipisci, alias esse!
+            MarsDiet is a revolutionary health tracking application designed to
+            help users maintain a balanced and healthy lifestyle. Whether you're
+            trying to lose weight, gain muscle, or simply stay fit, MarsDiet
+            provides an intuitive and comprehensive platform to monitor your
+            calorie intake, water consumption, and sleep patterns.
           </div>
         </div>
         {/* <div className="flex gap-x-4">
