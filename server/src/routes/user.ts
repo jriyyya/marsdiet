@@ -2,7 +2,7 @@ import express from "express";
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send({ message: "success" });
+  res.send("BHAI CHAL gaya");
 });
 
 export default router;

@@ -1,30 +1,24 @@
 import express from "express";
-import exampleRouter from "./example";
-import userRouter from "./user";
 import path from "path";
 import fs from "fs";
 
 const router = express.Router();
 
-router.use("/example", exampleRouter);
-router.use("/user", exampleRouter);
-
 function registerRoutesDynamically() {
-  const directory = path.dirname(path.join(__dirname, "routes"));
-  const filename = path.basename(__dirname);
+  const directory = path.dirname(__filename);
+  const filename = path.basename(__filename);
   let paths: string[] = [];
 
   try {
     const files = fs.readdirSync(directory);
-    const filteredFiles = files.filter((file) => file !== filename);
-    paths = filteredFiles;
+    paths = files.filter((file) => file !== filename);
   } catch (err) {
     console.error("Error reading directory:", err);
   }
 
-  paths.forEach((path) => {
-    import(`./${path}`).then((routeRouter) => {
-      router.use(`/${path}`, routeRouter.default);
+  paths.forEach((routerPath) => {
+    import(`./${routerPath}`).then((routeRouter) => {
+      router.use(`/${path.parse(routerPath).name}`, routeRouter.default);
     });
   });
 }
