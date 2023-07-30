@@ -29,10 +29,16 @@ router.post("/new", (req, res) => {
     return res.sendStatus(400);
   }
 
-  const newUser = new User({ auth0_uid, picture });
+  User.findOne({ auth0_uid, picture }).then((user) => {
+    if (!user) {
+      const newUser = new User({ auth0_uid, picture });
 
-  newUser.save().then(() => {
-    return res.status(200).send(req.body);
+      newUser.save().then(() => {
+        return res.status(200).send(req.body);
+      });
+    } else {
+      return res.sendStatus(400);
+    }
   });
 
   return res.sendStatus(500);
