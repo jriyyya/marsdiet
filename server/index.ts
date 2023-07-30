@@ -12,7 +12,6 @@ const app = express();
 
 app.use(cors({ origin: frontendUrl }));
 app.use(express.json());
-app.use(express.urlencoded());
 
 app.use("/", indexRouter);
 
