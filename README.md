@@ -31,7 +31,7 @@ MarsDiet is a revolutionary health tracking application designed to help users m
 
 Client:
 ```
-VITE_BACKEND_URL = "http://127.0.0.1:900"
+VITE_BACKEND_URL = "http://127.0.0.1:9000"
 VITE_AUTH0_DOMAIN = ""
 VITE_AUTH0_CLIENTID = ""
 ```
