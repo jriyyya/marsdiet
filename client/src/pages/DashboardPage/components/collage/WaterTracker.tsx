@@ -40,7 +40,7 @@ export default function WaterTracker() {
   //     ],
   //   };
   return (
-    <div className="bg-foreground bg-opacity-25 aspect-square rounded-3xl p-4 items-center flex flex-col gap-y-4">
+    <div className="bg-foreground bg-opacity-25 rounded-3xl p-4 items-center basis-1/2 flex flex-col gap-y-4">
       <ChartComponent type="doughnut" data={data} />
       <div className="flex gap-x-2">
         <button

@@ -14,7 +14,7 @@ export default function SleepTrack() {
     ],
   };
   return (
-    <div className="bg-secondary bg-opacity-50 aspect-square rounded-3xl p-4">
+    <div className="bg-secondary bg-opacity-50 basis-1/2 rounded-3xl p-4">
       <div className="flex flex-col items-center">
         <ChartComponent data={data} type="line" />
         <div className="text-sm">Month of July</div>
