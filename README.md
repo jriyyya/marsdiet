@@ -1,5 +1,6 @@
 # MarsDiet
-![image](https://github.com/jriyyya/marsdiet/assets/96080203/f24fd7dc-1bcb-4b0f-a357-6889be5192cc)
+![image](https://github.com/jriyyya/marsdiet/assets/96080203/67f1e0b6-af59-427c-b1d1-f13378736731)
+
 
 MarsDiet is a revolutionary health tracking application designed to help users maintain a balanced and healthy lifestyle. Whether you're trying to lose weight, gain muscle, or simply stay fit, MarsDiet provides an intuitive and comprehensive platform to monitor your calorie intake, water consumption, and sleep patterns. With its user-friendly interface and advanced food item recognition system, MarsDiet takes the guesswork out of maintaining a healthy diet and overall well-being.
 
