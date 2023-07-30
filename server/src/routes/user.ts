@@ -24,6 +24,7 @@ router.get("/:id/registration/status", async (req, res) => {
 });
 
 router.post("/new", async (req, res) => {
+  console.log(req.body)
   const { auth0_uid, picture } = req.body;
 
   if (!(auth0_uid && picture)) {

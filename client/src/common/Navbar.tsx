@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
 import useNavbarConfig from "../hooks/useNavbarConfig";
 import { useAuth0 } from "@auth0/auth0-react";
+import api from "../api";
 
 const navItems = [
   {
@@ -21,7 +22,7 @@ const navItems = [
 
 export default function Navbar() {
   const config = useNavbarConfig().value;
-  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
+  const { loginWithPopup, user, isAuthenticated, logout } = useAuth0();
   return (
     <nav
       className={twMerge(
@@ -55,7 +56,7 @@ export default function Navbar() {
         {!isAuthenticated && (
           <button
             className="px-8 py-3 text-back font-medium rounded-3xl bg-gradient-to-tl from-primary to-secondary whitespace-nowrap"
-            onClick={() => loginWithRedirect()}
+            onClick={() => loginWithPopup()}
           >
             Get Started
           </button>
