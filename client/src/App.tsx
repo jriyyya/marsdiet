@@ -14,6 +14,7 @@ import AuthPage from "./pages/AuthPage/AuthPage";
 import { Auth0Provider } from "@auth0/auth0-react";
 import ProtectedRoute, { ProtectedTypes } from "./common/ProtectedRoute";
 import DashboardPage from "./pages/DashboardPage/DashboardPage";
+import HelpPage from "./pages/HelpPage/HelpPage";
 
 const AUTH0_DOMAIN = import.meta.env.VITE_AUTH0_DOMAIN;
 const AUTH0_CLIENTID = import.meta.env.VITE_AUTH0_CLIENTID;
@@ -28,6 +29,7 @@ export default function App() {
           element={<ProtectedRoute type={ProtectedTypes.PUBLICONLY} />}
         >
           <Route index element={<HomePage />} />
+          <Route element={<HelpPage />} path="/help" />
           <Route path="/auth" element={<AuthPage />} />
         </Route>
 

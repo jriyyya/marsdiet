@@ -12,7 +12,7 @@ const navItems = [
   },
   {
     title: "About",
-    to: "/about",
+    to: "https://devpost.com/software/marsdiet",
   },
   {
     title: "Help",

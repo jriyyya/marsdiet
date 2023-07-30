@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <>
@@ -12,8 +14,8 @@ export default function Footer() {
         <div className="bg-primary text-back items-center flex flex-col gap-y-4 py-8 text-opacity-75">
           <div className="flex gap-x-6 text-xl">
             <div>Home</div>
-            <div>About</div>
-            <div>Contact Us</div>
+            <Link to="https://devpost.com/software/marsdiet">About</Link>
+            <Link to="https://www.linkedin.com/in/marsian83">Contact Us</Link>
           </div>
           <div>Made with 🤍 by Spandan Barve and Riya Jain</div>
         </div>
