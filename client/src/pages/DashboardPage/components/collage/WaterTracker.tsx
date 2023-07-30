@@ -11,7 +11,7 @@ export default function WaterTracker() {
       {
         label: "Glasses",
         data: [glassesDrank, glassesCount - glassesDrank],
-        backgroundColor: ["rgb(101, 189, 255)", "rgb(255, 101, 101)"],
+        backgroundColor: ["rgb(90, 200, 255)", "rgba(255, 50, 50, 0.8)"],
         hoverOffset: 4,
       },
     ],
@@ -40,11 +40,11 @@ export default function WaterTracker() {
   //     ],
   //   };
   return (
-    <div className="bg-foreground bg-opacity-25 rounded-3xl p-4 items-center basis-1/2 flex flex-col gap-y-4">
+    <div className="bg-slate-200 rounded-3xl p-4 items-center basis-1/3 flex flex-col gap-y-4">
       <ChartComponent type="doughnut" data={data} />
       <div className="flex gap-x-2">
         <button
-          className="bg-blue-500 flex items-center px-2 py-2 rounded-xl text-white font-semibold"
+          className="bg-[#5ac8ff] flex items-center px-2 py-2 rounded-xl text-white font-semibold"
           onClick={() => {
             setGlassesDrank(glassesDrank + 1);
           }}
@@ -52,7 +52,7 @@ export default function WaterTracker() {
           Drank water <MaterialIcon codepoint="e145" />
         </button>
         <button
-          className="bg-blue-500 flex items-center px-2 py-2 rounded-xl text-white font-semibold"
+          className="bg-[#5ac8ff] flex items-center px-2 py-2 rounded-xl text-white font-semibold"
           onClick={() => {
             setGlassesDrank(glassesDrank + 1);
           }}

@@ -2,7 +2,7 @@ import { HTMLInputTypeAttribute, useEffect, useRef, useState } from "react";
 import MaterialIcon from "../../../../common/MaterialIcon";
 import { twMerge } from "tailwind-merge";
 
-export default function CaloriesTracker() {
+export default function CaloriesTrackerForm() {
   const [showDescriptionHelp, setShowDescriptionHelp] = useState(false);
   const [selectedInput, setSelectedInput] = useState<HTMLInputElement | null>(
     null
@@ -31,7 +31,7 @@ export default function CaloriesTracker() {
   }, [selectedInput]);
 
   return (
-    <div className="bg-primary rounded-3xl basis-1/3 w-full bg-opacity-90 p-4 items-center flex flex-col text-back gap-y-4">
+    <div className="bg-primary rounded-3xl basis-1/3 bg-opacity-90 p-4 items-center flex flex-col text-back gap-y-4">
       <h2 className="text-2xl font-semibold font-raleway">
         Track your Calories
       </h2>
