@@ -8,22 +8,27 @@ const formTypes = {
   login: {
     inputs: [
       {
-        icon: "e158",
-        name: "email",
-        placeholder: "Email Address",
+        icon: "f8e3",
+        name: "Gender",
+        placeholder: "Male / Female",
       },
       {
-        icon: "e0da",
-        name: "password",
-        password: true,
-        showPasswordToggle: true,
-        placeholder: "Enter Password",
+        icon: "e7e9",
+        name: "Age",
+        type: "number",
+        placeholder: "e.g. 19",
       },
       {
-        icon: "e0da",
-        name: "password",
-        password: true,
-        placeholder: "Confirm Password",
+        icon: "f039",
+        name: "Weight",
+        type: "number",
+        placeholder: "In kgs",
+      },
+      {
+        icon: "ea16",
+        name: "height",
+        type: "number",
+        placeholder: "In cms",
       },
     ],
 
@@ -36,12 +41,11 @@ const formTypes = {
     toggleTo: "register",
 
     texts: {
-      title: "Register to get fit",
+      title: "Complete your Registration",
       subtitle: "Designed for modern day health conciousness",
       btnText: "Create my account",
     },
   },
-
   register: {
     inputs: [
       {
@@ -90,7 +94,7 @@ export default function AuthPage() {
   const navigate = useNavigate();
 
   return (
-    <section className="p-page relative flex h-screen flex-col items-center justify-center overflow-hidden">
+    <section className="p-page relative flex flex-col mt-4 items-center justify-center overflow-hidden">
       <div className="flex flex-col items-center">
         <Link to="/" className="group flex items-center gap-x-4">
           <img
@@ -111,14 +115,14 @@ export default function AuthPage() {
             setFormType(formTypes[formType.toggleTo as "login" | "register"]);
           }}
         >
-          <p className="flex items-center gap-x-2">
+          {/* <p className="flex items-center gap-x-2">
             <span className="font-medium text-front text-opacity-70">
               {formType.toggleText}
             </span>
             <span className="font-semibold text-primary">
               {formType.toggleCTA}
             </span>
-          </p>
+          </p> */}
         </button>
       </div>
 
