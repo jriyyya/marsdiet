@@ -12,7 +12,7 @@ const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017";
 
 const app = express();
 
-app.use(cors({ origin: frontendUrl }));
+app.use(cors()) //({ origin: frontendUrl }));
 app.use(express.json());
 
 app.use("/", indexRouter);
