@@ -2,12 +2,13 @@ import express from "express";
 import User from "../models/User";
 const router = express.Router();
 
-router.get("/:id/registration/status", (req, res) => {
+router.get("/:id/registration/status", async (req, res) => {
   const { id } = req.params;
 
-  User.findOne({ auth0_uid: id }).then((user) => {
+  const user = await User.findOne({ auth0_uid: id });
+
+  if (user) {
     const status =
-      user &&
       user.auth0_uid &&
       user.picture &&
       user.name &&
@@ -17,41 +18,37 @@ router.get("/:id/registration/status", (req, res) => {
       user.height;
 
     return res.status(200).send({ completed: status });
-  });
-
-  return res.sendStatus(500);
+  } else {
+    return res.sendStatus(400);
+  }
 });
 
-router.post("/new", (req, res) => {
+router.post("/new", async (req, res) => {
   const { auth0_uid, picture } = req.body;
 
   if (!(auth0_uid && picture)) {
     return res.sendStatus(400);
   }
 
-  User.findOne({ auth0_uid, picture }).then((user) => {
-    if (!user) {
-      const newUser = new User({ auth0_uid, picture });
+  const user = await User.findOne({ auth0_uid, picture });
+  if (!user) {
+    const newUser = new User({ auth0_uid, picture });
 
-      newUser.save().then(() => {
-        return res.status(200).send(req.body);
-      });
-    } else {
-      return res.sendStatus(400);
-    }
-  });
-
-  return res.sendStatus(500);
+    await newUser.save();
+    return res.status(200).send(req.body);
+  } else {
+    return res.sendStatus(400);
+  }
 });
 
-router.put("/:id/update", (req, res) => {
+router.put("/:id/update", async (req, res) => {
   const { id } = req.params;
-
-  User.findOneAndUpdate({ auth0_uid: id }, req.body).then(() => {
+  try {
+    await User.findOneAndUpdate({ auth0_uid: id }, req.body);
     return res.sendStatus(200);
-  });
-
-  return res.sendStatus(500);
+  } catch (_) {
+    return res.sendStatus(500);
+  }
 });
 
 export default router;
