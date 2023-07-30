@@ -17,7 +17,7 @@ export default function Hero() {
             Healthy <br />{" "}
             <div>
               {" "}
-              <span className="text-primary">food</span> a
+              <span className="text-primary">food</span> for
             </div>
             a healthy life
           </div>

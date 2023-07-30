@@ -6,7 +6,7 @@ export default function CaloriesTrackerGraph() {
     datasets: [
       {
         label: "Calories Tracker",
-        data: [11, 8, 12, 8, 6, 10, 4],
+        data: [1100, 800, 1224, 883, 1800, 2100, 1250],
         borderColor: "rgb(255, 159, 64)",
         backgroundColor: "rgba(255, 159, 64, 0.9)",
         borderWidht: 2,

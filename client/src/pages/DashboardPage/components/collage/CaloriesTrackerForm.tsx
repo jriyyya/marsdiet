@@ -67,11 +67,9 @@ export default function CaloriesTrackerForm() {
             {showDescriptionHelp && (
               <div className="absolute top-full right-0 -translate-y-2 w-4/5 text-xs bg-background p-1 rounded-md text-front shadow-lg border border-foreground border-opacity-30">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Repellat temporibus dicta quae perferendis odio voluptatibus
-                  explicabo consectetur. Quia eligendi itaque, blanditiis nam
-                  pariatur illum odio maxime voluptatibus explicabo, facilis
-                  autem tenetur debitis esse repellendus!
+                  You will have to input the details as quanity followed by the
+                  food which you ate, for example you can give an input as, 2
+                  Glass of milk, 5 slices of break, 1 bowl of cereal
                 </p>
               </div>
             )}
@@ -88,7 +86,6 @@ export default function CaloriesTrackerForm() {
             placeholder="Enter a number"
             step={0.1}
             min={0}
-            max={20000}
             maxLength={8}
             ref={calorieRef}
             onFocus={(event) => setSelectedInput(event.target)}
@@ -96,9 +93,6 @@ export default function CaloriesTrackerForm() {
               setQuery((q) => {
                 return { ...q, message: event.target.value };
               });
-              if (event.target.value > event.target.max) {
-                event.target.value = event.target.max;
-              }
               if (event.target.value.length > event.target.maxLength) {
                 event.target.value = event.target.value.slice(
                   0,
