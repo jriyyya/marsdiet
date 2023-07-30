@@ -17,14 +17,14 @@ router.get("/:id/registration/status", async (req, res) => {
       user.weight &&
       user.height;
 
-    return res.status(200).send({ completed: status });
+    return res.status(200).send({ completed: Boolean(status) });
   } else {
     return res.sendStatus(400);
   }
 });
 
 router.post("/new", async (req, res) => {
-  console.log(req.body)
+  console.log(req.body);
   const { auth0_uid, picture } = req.body;
 
   if (!(auth0_uid && picture)) {
@@ -36,7 +36,7 @@ router.post("/new", async (req, res) => {
     const newUser = new User({ auth0_uid, picture });
 
     await newUser.save();
-    return res.status(200).send(req.body);
+    return res.status(200).send(newUser);
   } else {
     return res.sendStatus(400);
   }
