@@ -28,11 +28,11 @@ export default function AuthForm(props: AuthFormProps) {
 
   return (
     <form
-      className="mt-14 flex flex-col gap-y-3 rounded-2xl bg-foreground bg-opacity-10 px-14 py-8 items-center"
+      className="mt-14 flex flex-col gap-y-3 rounded-2xl bg-secondary bg-opacity-10 px-14 py-8 items-center"
       onSubmit={handleSubmit}
     >
-      <h1 className="text-2xl">{props.texts.title}</h1>
-      <h1 className="text-front text-opacity-80">{props.texts.subtitle}</h1>
+      <h1 className="text-2xl text-primary font-bold">{props.texts.title}</h1>
+      <h1 className="text-front text-opacity-90">{props.texts.subtitle}</h1>
 
       <div className="mt-5 flex flex-col gap-y-4">
         {props.inputs.map((input, key) => (
