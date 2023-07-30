@@ -3,21 +3,21 @@ import { useEffect } from "react";
 
 const items = [
   {
-    title: "Keep Track of your Steps",
+    title: "Keep Track of your Calories",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus quisquam sit modi dolorum nobis dolorem voluptas aspernatur ipsum cum! Laboriosam?",
+      "MarsDiet empowers users to effortlessly track their daily calorie intake. It will provide accurate calorie information, making it easy for users to stay on top of their dietary goals.",
     imgUrl: "/images/hero/jogging.png",
   },
   {
-    title: "Get reminders for drinking water",
+    title: "Did you drink 10 glasses of water today?",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus quisquam sit modi dolorum nobis dolorem voluptas aspernatur ipsum cum! Laboriosam?",
+      "Proper hydration is crucial for overall health, and MarsDiet understands this. The app allows users to log their daily water intake, keeping them motivated to meet their hydration goals",
     imgUrl: "/images/hero/drinking-water.png",
   },
   {
     title: "Know your sleep schedule",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus quisquam sit modi dolorum nobis dolorem voluptas aspernatur ipsum cum! Laboriosam?",
+      "Getting adequate sleep is essential for physical and mental well-being. MarsDiet includes a sleep tracking feature that allows users to record their sleep duration and quality",
     imgUrl: "/images/hero/sleep-analysis.png",
   },
 ];
