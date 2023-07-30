@@ -106,7 +106,7 @@ export default function CaloriesTrackerForm() {
           Add +
         </button>
       </div>
-      {JSON.stringify(query)}
+      {/* {JSON.stringify(query)} */}
     </div>
   );
 }
