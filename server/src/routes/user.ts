@@ -2,10 +2,6 @@ import express from "express";
 import User from "../models/User";
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("BHAI CHAL gaya");
-});
-
 router.get("/:id/registration/status", (req, res) => {
   const { id } = req.params;
 
@@ -23,7 +19,7 @@ router.get("/:id/registration/status", (req, res) => {
     return res.status(200).send({ completed: status });
   });
 
-  res.sendStatus(500);
+  return res.sendStatus(500);
 });
 
 router.post("/new", (req, res) => {
@@ -37,6 +33,16 @@ router.post("/new", (req, res) => {
 
   newUser.save().then(() => {
     return res.status(200).send(req.body);
+  });
+
+  return res.sendStatus(500);
+});
+
+router.put("/:id/update", (req, res) => {
+  const { id } = req.params;
+
+  User.findOneAndUpdate({ auth0_uid: id }, req.body).then(() => {
+    return res.sendStatus(200);
   });
 
   return res.sendStatus(500);
