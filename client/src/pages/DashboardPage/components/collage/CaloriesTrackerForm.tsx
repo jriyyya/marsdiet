@@ -45,6 +45,18 @@ export default function CaloriesTrackerForm() {
               placeholder="Describe your food"
               ref={descriptionRef}
               onFocus={(event) => setSelectedInput(event.target)}
+              maxLength={50}
+              onChange={(event) => {
+                setQuery((q) => {
+                  return { ...q, message: event.target.value };
+                });
+                if (event.target.value.length > event.target.maxLength) {
+                  event.target.value = event.target.value.slice(
+                    0,
+                    event.target.value.length - 1
+                  );
+                }
+              }}
             />
             <button onClick={() => setShowDescriptionHelp((b) => !b)}>
               <MaterialIcon
@@ -71,11 +83,29 @@ export default function CaloriesTrackerForm() {
         <div className="flex flex-col w-full">
           <p className="text-xs">How many calories did you eat?</p>
           <input
-            className="outline-none rounded-md py-2 px-4 text-back placeholder:text-back placeholder:text-opacity-90 bg-transparent border"
-            type="text"
+            className="outline-none truncate rounded-md py-2 px-4 text-back placeholder:text-back placeholder:text-opacity-90 bg-transparent border"
+            type="number"
             placeholder="Enter a number"
+            step={0.1}
+            min={0}
+            max={20000}
+            maxLength={8}
             ref={calorieRef}
             onFocus={(event) => setSelectedInput(event.target)}
+            onChange={(event) => {
+              setQuery((q) => {
+                return { ...q, message: event.target.value };
+              });
+              if (event.target.value > event.target.max) {
+                event.target.value = event.target.max;
+              }
+              if (event.target.value.length > event.target.maxLength) {
+                event.target.value = event.target.value.slice(
+                  0,
+                  event.target.value.length - 1
+                );
+              }
+            }}
           />
         </div>
         <button className="bg-back text-primary py-2 px-3 rounded-xl mt-4 font-semibold hover:-translate-y-1 duration-300 hover:shadow-lg">
